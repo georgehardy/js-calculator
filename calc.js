@@ -26,22 +26,23 @@ function clicked(e)
   else if (buttonClicked.classList.contains("operator"))
   {
     addCalculation(buttonClicked.id);
+    console.log("op " + buttonClicked.id)
   }
   else
   {
     switch(buttonClicked.id) {
       case "decimal":
-          if (!displayContent.includes(".")) displayContent += ".";
-          break;
+        if (!displayContent.includes(".")) displayContent += ".";
+        break;
       case "clear":
-          reset();
-          break;
+        reset();
+        break;
       case "clearentry":
-          displayContent = "";
+        displayContent = "";
       case "equals":
-          listNumbers.push(convertToNumber(display.value));
-          doCalculations();
-          break;
+        listNumbers.push(convertToNumber(display.value));
+        displayContent = doCalculations();
+        break;
   }
   }
   updateDisplay();
@@ -55,10 +56,57 @@ function addCalculation (operator) {
 }
 
 function doCalculations () {
-  displayContent = "";
-  console.log("do math");
   console.log(listNumbers);
   console.log(listOperators);
+  let num1 = listNumbers.splice(0,1);
+  let num2 = listNumbers.splice(0,1);
+  let op = listOperators.splice(0,1);
+  console.log(num1 + " " + op + " " + num2 )
+  let result = doOperation(num1,num2,op);
+  
+  if (listOperators.length == 0)
+  {
+    return result;
+  }
+  else
+  {
+    listNumbers.unshift(result);
+    return doCalculations();
+  }
+}
+
+function doOperation (num1,num2,operator) {
+  if (operator == "add") {
+    return Number(num1) + Number(num2);
+  }
+  else if (operator == "subtract") {
+    return num1 - num2;
+  }
+  else if (operator == "multiply") {
+    return num1 * num2;
+  }
+  else if (operator == "divide") {
+    return num1 / num2;
+  }
+  /* Need to figure why this doesn't match.
+  switch (operator) {
+    case "add":
+      return num1 + num2;
+      break;
+    case "subtract":
+      return num1 - num2;
+      break;
+    case "multiply":
+    console.log("peng");
+      return num1 * num2;
+      break;
+    case "divide":
+      return num1 / num2;
+      break;
+    default:
+      console.log("???");
+  }
+  */
 }
 
 function convertToNumber(n) {
