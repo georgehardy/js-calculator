@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>George Hardy - js-calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+  <link href="calc.css" rel="stylesheet">
+  <script src="calc.js"></script>
+</head>
+
+<body>
+    <div class="main">
+      <div class="calculator">
+        <div class="container">
+          <div class="row">
+            <div class="five columns"><input type="text" id="display"></div>
+          </div>
+          <div class="row">
+            <div class="one column"><button class="function" id="clear">AC</button></div>
+            <div class="one column"><button class="function" id="clearentry">CE</button></div>
+            <div class="one column"><button class="operator" id="percent">%</button></div>
+            <div class="one column"><button class="operator" id="divide">÷</button></div>
+          </div>
+          <div class="row">
+              <div class="one column"><button class="number" id="seven">7</button></div>
+              <div class="one column"><button class="number" id="eight">8</button></div>
+              <div class="one column"><button class="number" id="nine">9</button></div>
+              <div class="one column"><button class="operator" id="multiply">x</button></div>
+          </div>
+          <div class="row">
+              <div class="one column"><button class="number" id="four">4</button></div>
+              <div class="one column"><button class="number" id="five">5</button></div>
+              <div class="one column"><button class="number" id="six">6</button></div>
+              <div class="one column"><button class="operator" id="subtract">-</button></div>
+          </div>
+          <div class="row">
+              <div class="one column"><button class="number" id="one">1</button></div>
+              <div class="one column"><button class="number" id="two">2</button></div>
+              <div class="one column"><button class="number" id="three">3</button></div>
+              <div class="one column"><button class="operator" id="plus">+</button></div>
+          </div>
+          <div class="row">
+              <div class="one column"><button class="number" id="zero">0</button></div>
+              <div class="one column"><button class="decimal" id="decimal">.</button></div>
+              <div class="two columns"><button class="equals" id="equals">=</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
