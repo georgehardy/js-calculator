@@ -1,0 +1,79 @@
+body {
+  margin: 50px;
+  font-family: 'Russo One', sans-serif;
+  color: rgb(218, 216, 216);
+}
+
+#top {
+  font-size: 150%;
+  font-style: italic;
+  text-align:right;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+#display {
+  grid-column: 1/5;
+  grid-row: 2/2;
+  font-size: 350%;
+  background-color: rgb(125, 140, 115);
+  color: rgb(36, 33, 33);
+  font-family: 'segment7', monospace;
+  padding: 10px;
+  padding-right: 20px;
+  padding-top: 12px;
+  text-shadow: -1px -1px 2px #dadad9;
+}
+
+.button {
+  background-color: rgb(218, 216, 216);
+  border-radius: 5px;
+  padding: 22px;
+  font-size: 1.2em;
+
+}
+
+.number, .decimal {
+  color: rgb(49, 47, 47);
+}
+
+.function {
+  background-color: rgb(238, 183, 65);
+  background-color: rgb(231, 99, 10);
+}
+
+.operator {
+  
+  background-color: rgb(50, 71, 121);
+  
+  /*background-color: rgb(238, 183, 65); */
+}
+
+.equals {
+  background-color: rgb(231, 99, 10);
+}
+
+#top {
+  grid-column: 1/5;
+}
+
+.wide {
+  grid-column: 3/5;
+}
+
+.tall {
+  grid-column: 4/4;
+  grid-row: 5/7;
+
+}
+
+.container {
+  display: grid;
+  width: 380px;
+  padding: 30px;
+  padding-top: 30px;
+  background-color: rgb(61, 58, 58);
+  grid-template-columns: repeat(4, 90px);
+  grid-gap: 8px;
+  border-radius: 20px;
+}

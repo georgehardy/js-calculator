@@ -5,7 +5,6 @@ var display;
 var displayContent;
 var listNumbers;
 var listOperators;
-var calculatedNumber;
 
 function reset ()
 {
@@ -46,6 +45,7 @@ function clicked(e)
   }
   }
   updateDisplay();
+  
 }
 
 function addCalculation (operator) {
@@ -56,8 +56,6 @@ function addCalculation (operator) {
 }
 
 function doCalculations () {
-  console.log(listNumbers);
-  console.log(listOperators);
   let num1 = listNumbers.splice(0,1);
   let num2 = listNumbers.splice(0,1);
   let op = listOperators.splice(0,1);
