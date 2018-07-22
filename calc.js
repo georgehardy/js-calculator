@@ -5,6 +5,8 @@ var display;
 var displayContent;
 var listNumbers;
 var listOperators;
+var finalNumber;
+var commitOperator;
 
 function reset ()
 {
@@ -12,6 +14,7 @@ function reset ()
   displayContent = "";
   listNumbers = [];
   listOperators = [];
+  finalNumber = false;
   updateDisplay();
 }
 
@@ -20,6 +23,10 @@ function clicked(e)
   var buttonClicked = e.target;
   if (buttonClicked.classList.contains("number"))
   {
+      if (finalNumber) {
+        finalNumber = false;
+        displayContent = "";
+      }
       displayContent += buttonClicked.innerHTML;
   }
   else if (buttonClicked.classList.contains("operator"))
@@ -38,9 +45,11 @@ function clicked(e)
         break;
       case "clearentry":
         displayContent = "";
+        break;
       case "equals":
         listNumbers.push(convertToNumber(display.value));
         displayContent = doCalculations();
+        finalNumber = true;
         break;
   }
   }
@@ -86,25 +95,6 @@ function doOperation (num1,num2,operator) {
   else if (operator == "divide") {
     return num1 / num2;
   }
-  /* Need to figure why this doesn't match.
-  switch (operator) {
-    case "add":
-      return num1 + num2;
-      break;
-    case "subtract":
-      return num1 - num2;
-      break;
-    case "multiply":
-    console.log("peng");
-      return num1 * num2;
-      break;
-    case "divide":
-      return num1 / num2;
-      break;
-    default:
-      console.log("???");
-  }
-  */
 }
 
 function convertToNumber(n) {
