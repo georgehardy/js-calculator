@@ -108,7 +108,10 @@ function checkIfNumber(n) {
 }
 
 function updateDisplay () {
-  if (displayContent < 0) display.value = Math.abs(displayContent) + '-';
-  else if (!isFinite(displayContent) || isNaN(displayContent)) display.value = "ERROR";
-  else display.value = displayContent;
+  let output = displayContent;
+  //if (output < 0) output = Math.abs(displayContent) + '-';
+  //else if (output == ".") output = "@";
+  //else if (output[output.length-1] == ".") output = "dec";
+  if (!isFinite(output) || isNaN(output)) display.value = "ERROR";
+  display.value = output;
   }
