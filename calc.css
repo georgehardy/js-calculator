@@ -9,6 +9,7 @@ body {
   padding-right: 10px;
   grid-column: 2/5;
   text-align:right;
+  margin-right: -10px;
 }
 
 #calc {
@@ -22,7 +23,7 @@ body {
 #display {
   grid-column: 1/5;
   grid-row: 2/2;
-  font-size: 350%;
+  font-size: 300%;
   background-color: rgb(125, 140, 115);
   color: rgb(36, 33, 33);
   font-family: 'segment7', monospace;
@@ -31,13 +32,14 @@ body {
   padding-top: 12px;
   text-shadow: -1px -1px 2px #dadad9;
   margin-bottom: 10px;
+
 }
 
 .button {
   background-color: rgb(218, 216, 216);
   border-radius: 5px;
-  padding: 22px;
-  font-size: 1.5em;
+  padding: 18px;
+  font-size: 1.3em;
   font-family: Verdana, sans-serif;
 
 }
@@ -74,11 +76,11 @@ body {
 
 .container {
   display: grid;
-  width: 380px;
-  padding: 30px;
-  padding-top: 30px;
+  width: 285px;
+  padding: 22px;
+  padding-top: 22px;
   background-color: rgb(61, 58, 58);
-  grid-template-columns: repeat(4, 90px);
-  grid-gap: 8px;
-  border-radius: 20px;
+  grid-template-columns: repeat(4, 68px);
+  grid-gap: 6px;
+  border-radius: 15px;
 }
