@@ -14,6 +14,8 @@ var commitedOperator;
 var currentNumber;
 var commitedNumber;
 
+var lastInput;
+
 function reset ()
 {
   display = document.getElementById("display")
@@ -26,7 +28,8 @@ function reset ()
   currentNumber = 0;
   commitedNumber = false;
   updateDisplay();
-  displayContent = "";
+
+  lastInput = '';
 }
 
 function clicked(e)
@@ -43,7 +46,7 @@ function clicked(e)
       }
       commitedNumber = false;
       commitedOperator = false;
-      displayContent += buttonClicked.innerHTML;
+      if (lastInput != "0") displayContent += buttonClicked.innerHTML;
   }
   else if (buttonClicked.classList.contains("operator"))
   {
@@ -54,6 +57,7 @@ function clicked(e)
   {
     switch(buttonClicked.id) {
       case "decimal":
+        console.log("x"+displayContent);
         if (!displayContent.includes(".")) displayContent += ".";
         break;
       case "clear":
@@ -70,6 +74,7 @@ function clicked(e)
         break;
   }
   }
+  
   updateDisplay();
   
 }
@@ -133,7 +138,9 @@ function checkIfNumber(n) {
 }
 
 function updateDisplay () {
-  let output = displayContent;
-  if (!isFinite(output) || isNaN(output)) display.value = "ERROR";
-  display.value = output;
+  if (!isFinite(displayContent) || isNaN(displayContent)) display.value = "ERROR";
+  if (displayContent[0] == 0 && displayContent.length > 1) {
+    displayContent = displayContent.substr(1);
   }
+  display.value = displayContent;
+}
