@@ -11,16 +11,20 @@ var commitOperator;
 function reset ()
 {
   display = document.getElementById("display")
-  displayContent = "";
+  displayContent = "0";
   listNumbers = [];
   listOperators = [];
   finalNumber = false;
   updateDisplay();
+  displayContent = "";
 }
 
 function clicked(e)
 {
   var buttonClicked = e.target;
+
+  if (!buttonClicked.classList.contains('button')) return;
+
   if (buttonClicked.classList.contains("number"))
   {
       if (finalNumber) {
@@ -47,7 +51,7 @@ function clicked(e)
         displayContent = "";
         break;
       case "equals":
-        listNumbers.push(convertToNumber(display.value));
+        listNumbers.push(checkIfNumber(display.value));
         displayContent = doCalculations();
         finalNumber = true;
         break;
@@ -58,13 +62,14 @@ function clicked(e)
 }
 
 function addCalculation (operator) {
-  listNumbers.push(convertToNumber(display.value));
+  listNumbers.push(checkIfNumber(display.value));
   listOperators.push(operator);
   displayContent = "";
   updateDisplay();
 }
 
 function doCalculations () {
+  if (listOperators.length == 0) return 0;
   let num1 = listNumbers.splice(0,1);
   let num2 = listNumbers.splice(0,1);
   let op = listOperators.splice(0,1);
@@ -97,14 +102,13 @@ function doOperation (num1,num2,operator) {
   }
 }
 
-function convertToNumber(n) {
-  let int = parseInt(n)
-  if (isNaN(int)) {
-    return 0;
-  }
-  return int;
+function checkIfNumber(n) {
+  if (isNaN(parseInt(n))) return 0;
+  return n;
 }
 
 function updateDisplay () {
-  display.value = displayContent;
-}
+  if (displayContent < 0) display.value = Math.abs(displayContent) + '-';
+  else if (!isFinite(displayContent) || isNaN(displayContent)) display.value = "ERROR";
+  else display.value = displayContent;
+  }
