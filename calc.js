@@ -8,6 +8,12 @@ var listOperators;
 var finalNumber;
 var commitOperator;
 
+var currentOperator;
+var commitedOperator;
+
+var currentNumber;
+var commitedNumber;
+
 function reset ()
 {
   display = document.getElementById("display")
@@ -15,6 +21,10 @@ function reset ()
   listNumbers = [];
   listOperators = [];
   finalNumber = false;
+  currentOperator = ''
+  commitedOperator = true;
+  currentNumber = 0;
+  commitedNumber = false;
   updateDisplay();
   displayContent = "";
 }
@@ -31,6 +41,8 @@ function clicked(e)
         finalNumber = false;
         displayContent = "";
       }
+      commitedNumber = false;
+      commitedOperator = false;
       displayContent += buttonClicked.innerHTML;
   }
   else if (buttonClicked.classList.contains("operator"))
@@ -62,9 +74,20 @@ function clicked(e)
 }
 
 function addCalculation (operator) {
-  listNumbers.push(checkIfNumber(display.value));
-  listOperators.push(operator);
-  displayContent = "";
+
+  if (!commitedNumber) {
+    listNumbers.push(checkIfNumber(display.value));
+    commitedNumber = true;
+  }
+  if (!commitedOperator) {
+    listOperators.push(operator);
+    displayContent = "";
+    commitedOperator = true;
+  }
+  else{
+    listOperators.splice(listOperators.length-1, 1, operator);
+  }
+
   updateDisplay();
 }
 
@@ -109,9 +132,6 @@ function checkIfNumber(n) {
 
 function updateDisplay () {
   let output = displayContent;
-  //if (output < 0) output = Math.abs(displayContent) + '-';
-  //else if (output == ".") output = "@";
-  //else if (output[output.length-1] == ".") output = "dec";
   if (!isFinite(output) || isNaN(output)) display.value = "ERROR";
   display.value = output;
   }
