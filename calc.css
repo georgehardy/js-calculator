@@ -4,10 +4,17 @@ body {
   color: rgb(218, 216, 216);
 }
 
-#top {
+#solar {
+  padding-bottom: 5px;
+  padding-right: 10px;
+  grid-column: 2/5;
+  text-align:right;
+}
+
+#calc {
   font-size: 150%;
   font-style: italic;
-  text-align:right;
+  padding-top: 10px;
   padding-bottom: 5px;
   padding-right: 10px;
 }
@@ -31,7 +38,7 @@ body {
   border-radius: 5px;
   padding: 22px;
   font-size: 1.5em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, sans-serif;
 
 }
 
@@ -53,10 +60,6 @@ body {
 
 .equals {
   background-color: rgb(231, 99, 10);
-}
-
-#top {
-  grid-column: 1/5;
 }
 
 .wide {
