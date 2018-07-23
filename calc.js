@@ -64,6 +64,7 @@ function clicked(e)
         break;
       case "equals":
         listNumbers.push(checkIfNumber(display.value));
+        console.log(listNumbers)
         displayContent = doCalculations();
         finalNumber = true;
         break;
@@ -92,7 +93,8 @@ function addCalculation (operator) {
 }
 
 function doCalculations () {
-  if (listOperators.length == 0) return 0;
+  if (listOperators.length == 0 && listNumbers.length > 0) return listNumbers.splice(0);
+  else if (listOperators.length == 0) return 0;
   let num1 = listNumbers.splice(0,1);
   let num2 = listNumbers.splice(0,1);
   let op = listOperators.splice(0,1);
