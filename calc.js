@@ -144,7 +144,7 @@ function checkIfNumber(n) {
 }
 
 function updateDisplay () {
-  if (!isFinite(displayContent) || isNaN(displayContent)) display.value = "ERROR";
+  if (!isFinite(displayContent) || isNaN(displayContent)) displayContent = "ERROR";
   if (displayContent[0] == 0 && displayContent.length > 1) {
     if (!displayContent[1] == ".") displayContent = displayContent.substr(1);
   }
