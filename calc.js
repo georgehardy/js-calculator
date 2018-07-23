@@ -41,9 +41,11 @@ function clicked(e)
   if (buttonClicked.classList.contains("number"))
   {
       checkFinal();
+      if (displayContent.length < 9) {
       commitedNumber = false;
       commitedOperator = false;
       displayContent += buttonClicked.innerHTML;
+      }
   }
   else if (buttonClicked.classList.contains("operator"))
   {
@@ -143,10 +145,14 @@ function checkIfNumber(n) {
   return n;
 }
 
+
 function updateDisplay () {
   if (!isFinite(displayContent) || isNaN(displayContent)) displayContent = "ERROR";
   if (displayContent[0] == 0 && displayContent.length > 1) {
     if (!displayContent[1] == ".") displayContent = displayContent.substr(1);
   }
-  display.value = displayContent;
+  console.log(displayContent.length);
+  console.log(displayContent);
+  display.value = displayContent.substr(0,9);
 }
+
