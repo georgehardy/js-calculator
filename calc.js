@@ -28,7 +28,7 @@ function reset ()
   currentNumber = 0;
   commitedNumber = false;
   updateDisplay();
-
+  displayContent = '';
   lastInput = '';
 }
 
@@ -40,13 +40,10 @@ function clicked(e)
 
   if (buttonClicked.classList.contains("number"))
   {
-      if (finalNumber) {
-        finalNumber = false;
-        displayContent = "";
-      }
+      checkFinal();
       commitedNumber = false;
       commitedOperator = false;
-      if (lastInput != "0") displayContent += buttonClicked.innerHTML;
+      displayContent += buttonClicked.innerHTML;
   }
   else if (buttonClicked.classList.contains("operator"))
   {
@@ -57,8 +54,9 @@ function clicked(e)
   {
     switch(buttonClicked.id) {
       case "decimal":
-        console.log("x"+displayContent);
-        if (!displayContent.includes(".")) displayContent += ".";
+        checkFinal();
+        if (displayContent.length == 0) displayContent = "0.";
+        else if (!displayContent.includes(".")) displayContent += ".";
         break;
       case "clear":
         reset();
@@ -69,7 +67,7 @@ function clicked(e)
       case "equals":
         listNumbers.push(checkIfNumber(display.value));
         console.log(listNumbers)
-        displayContent = doCalculations();
+        displayContent = doCalculations().toString();
         finalNumber = true;
         break;
   }
@@ -77,6 +75,14 @@ function clicked(e)
   
   updateDisplay();
   
+}
+
+function checkFinal()
+{
+  if (finalNumber) {
+    finalNumber = false;
+    displayContent = "";
+  }
 }
 
 function addCalculation (operator) {
@@ -140,7 +146,7 @@ function checkIfNumber(n) {
 function updateDisplay () {
   if (!isFinite(displayContent) || isNaN(displayContent)) display.value = "ERROR";
   if (displayContent[0] == 0 && displayContent.length > 1) {
-    displayContent = displayContent.substr(1);
+    if (!displayContent[1] == ".") displayContent = displayContent.substr(1);
   }
   display.value = displayContent;
 }
