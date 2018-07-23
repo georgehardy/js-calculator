@@ -46,6 +46,7 @@ a {
 .button {
   background-color: rgb(218, 216, 216);
   border-radius: 5px;
+  border:1px solid rgb(218, 216, 216);
   padding: 18px;
   font-size: 1.3em;
   font-family: Verdana, sans-serif;
@@ -54,7 +55,7 @@ a {
 }
 
 .button:active {
-  box-shadow: 1px 1px 7px rgb(56, 55, 55) inset;
+  box-shadow: 1px 1px 7px 1px rgb(56, 55, 55) inset;
 }
 
 .number, .decimal {
@@ -62,19 +63,21 @@ a {
 }
 
 .function {
-  background-color: rgb(238, 183, 65);
   background-color: rgb(231, 99, 10);
+  border:1px solid  rgb(231, 99, 10);
 }
 
 .operator {
   
-  background-color: rgb(50, 71, 121);
+  background-color: rgb(17, 174, 185);
   
+  border:1px solid rgb(17, 174, 185);
   /*background-color: rgb(238, 183, 65); */
 }
 
 .equals {
   background-color: rgb(231, 99, 10);
+  border:1px solid  rgb(231, 99, 10);
 }
 
 .wide {
@@ -93,7 +96,7 @@ a {
   height: 500px;
   padding: 22px;
   padding-top: 22px;
-  background-color: rgb(61, 58, 58);
+  background-color: rgb(71, 68, 68);
   grid-template-columns: repeat(4, 68px);
   grid-gap: 6px;
   border-radius: 15px;
@@ -103,7 +106,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  border:5px solid rgb(75, 75, 75);
+  border:5px solid rgb(94, 92, 92);
   border-radius: 10px;
 
 }
