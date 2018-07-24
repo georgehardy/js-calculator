@@ -28,7 +28,7 @@ function reset ()
   currentNumber = 0;
   commitedNumber = false;
   updateDisplay();
-  displayContent = '';
+  displayContent = '0';
   lastInput = '';
 }
 
@@ -154,5 +154,9 @@ function updateDisplay () {
   console.log(displayContent.length);
   console.log(displayContent);
   display.value = displayContent.substr(0,9);
+}
+
+function flip() {
+  document.getElementsByClassName("container")[0].classList.toggle("flip");
 }
 
