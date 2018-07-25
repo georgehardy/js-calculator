@@ -1,116 +1,95 @@
 body {
-  margin: 25px;
-  font-family: 'Russo One', sans-serif;
-  color: rgb(218, 216, 216);
-  background-color: rgb(218, 216, 216);
+	margin: 25px;
+	font-family: 'Russo One', sans-serif;
+	color: rgb(218, 216, 216);
+	background-color: rgb(218, 216, 216);
 }
-
-#solar {
-  padding-bottom: 5px;
-  padding-right: 10px;
-  grid-column: 2/5;
-  text-align:right;
-  margin-right: -10px;
-  
+a, i {
+	color: rgb(92, 91, 91);
 }
-
-#calc {
-  font-size: 150%;
-  font-style: italic;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-}
-
-a, i{
-  color: rgb(92, 91, 91); 
-}
-
-#display {
-  grid-column: 1/5;
-  grid-row: 2/2;
-  font-size: 300%;
-  background-color: rgb(125, 140, 115);
-  color: rgb(36, 33, 33);
-  font-family: 'segment7', monospace;
-  padding: 10px;
-  padding-right: 15px;
-  padding-top: 18px;
-  text-shadow: -1px -1px 2px #dadad9;
-  margin-bottom: 10px;
-  border:3px solid rgb(75, 75, 75);
-  box-shadow: 1px 1px 5px #555 inset;
-  text-align: right;
-}
-
-.button {
-  background-color: rgb(218, 216, 216);
-  border-radius: 5px;
-  border:1px solid rgb(218, 216, 216);
-  padding: 18px;
-  font-size: 1.3em;
-  font-family: Verdana, sans-serif;
-  outline:none;
-
-}
-
-.button:active {
-  box-shadow: 1px 1px 7px 1px rgb(56, 55, 55) inset;
-}
-
-.number, .decimal {
-  color: rgb(49, 47, 47);
-}
-
-.function {
-  background-color: rgb(231, 99, 10);
-  border:1px solid  rgb(231, 99, 10);
-}
-
-.operator {
-  
-  background-color: rgb(17, 174, 185);
-  
-  border:1px solid rgb(17, 174, 185);
-  /*background-color: rgb(238, 183, 65); */
-}
-
-.equals {
-  background-color: rgb(231, 99, 10);
-  border:1px solid  rgb(231, 99, 10);
-}
-
-.wide {
-  grid-column: 3/5;
-}
-
-.tall {
-  grid-column: 4/4;
-  grid-row: 5/7;
-
-}
-
 .container {
-  display: grid;
-  width: 288px;
-  height: 500px;
-  padding: 22px;
-  padding-top: 22px;
-  background-color: rgb(71, 68, 68);
-  grid-template-columns: repeat(4, 68px);
-  grid-gap: 6px;
-  border-radius: 15px;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border:5px solid rgb(94, 92, 92);
-  border-radius: 10px;
-
+	display: grid;
+	width: 288px;
+	height: 500px;
+	padding: 22px;
+	padding-top: 22px;
+	background-color: rgb(71, 68, 68);
+	grid-template-columns: repeat(4, 68px);
+	grid-gap: 6px;
+	border-radius: 15px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 5px solid rgb(94, 92, 92);
+	border-radius: 10px;
 }
-
+.wide {
+	grid-column: 3/5;
+}
+.tall {
+	grid-column: 4/4;
+	grid-row: 5/7;
+}
+#calc {
+	font-size: 150%;
+	font-style: italic;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+#solar {
+	padding-bottom: 5px;
+	padding-right: 10px;
+	grid-column: 2/5;
+	text-align: right;
+	margin-right: -10px;
+}
+#display {
+	grid-column: 1/5;
+	grid-row: 2/2;
+	font-size: 300%;
+	background-color: rgb(125, 140, 115);
+	color: rgb(36, 33, 33);
+	font-family: 'segment7', monospace;
+	padding: 10px;
+	padding-right: 15px;
+	padding-top: 18px;
+	text-shadow: -1px -1px 2px #dadad9;
+	margin-bottom: 10px;
+	border: 3px solid rgb(75, 75, 75);
+	box-shadow: 1px 1px 5px #555 inset;
+	text-align: right;
+}
+.button {
+	background-color: rgb(218, 216, 216);
+	border-radius: 5px;
+	border: 1px solid rgb(218, 216, 216);
+	padding: 18px;
+	font-size: 1.3em;
+	font-family: Verdana, sans-serif;
+	outline: none;
+}
+.button:active {
+	box-shadow: 1px 1px 7px 1px rgb(56, 55, 55) inset;
+}
+.number, .decimal {
+	color: rgb(49, 47, 47);
+}
+.function {
+	background-color: rgb(231, 99, 10);
+	border: 1px solid rgb(231, 99, 10);
+}
+.operator {
+	background-color: rgb(17, 174, 185);
+	border: 1px solid rgb(17, 174, 185);
+}
+.equals {
+	background-color: rgb(231, 99, 10);
+	border: 1px solid rgb(231, 99, 10);
+}
 .flip {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
